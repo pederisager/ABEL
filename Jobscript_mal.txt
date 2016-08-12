@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Job name:
-#SBATCH --job-name=lowFEAT
+#SBATCH --job-name=YourJobname
 #
 # Project:
-#SBATCH --account=uio
+#SBATCH --account=YourProject
 #
 # Wall clock limit:
 #SBATCH --time=hh:mm:ss
@@ -16,9 +16,6 @@
 source /cluster/bin/jobsetup
 module purge   # clear any inherited modules
 set -o errexit # exit on errors
-
-DATASET=dataset.$TASK_ID
-OUTFILE=outfile.$TASK_ID
 
 ## Copy input files to the work directory:
 cp MyInputFile $SCRATCH
