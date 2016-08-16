@@ -1,15 +1,9 @@
 #!/bin/bash
 
-# Job name:
-#SBATCH --job-name=lowFEAT
-#
-# Project:
-#SBATCH --account=uio
-#
-# Wall clock limit:
+
+#SBATCH --job-name=YourJobname
+#SBATCH --account=YourProject
 #SBATCH --time=hh:mm:ss
-#
-# Max memory usage:
 #SBATCH --mem-per-cpu=Size
 
 ## Set up job environment:
@@ -17,8 +11,13 @@ source /cluster/bin/jobsetup
 module purge   # clear any inherited modules
 set -o errexit # exit on errors
 
+module load fsl/5.0.8
+
 DATASET=dataset.$TASK_ID
-OUTFILE=outfile.$TASK_ID
+OUTFILE=result.$TASK_ID
+p $DATASET $SCRATCH
+cd $SCRATCH
+chkfile $OUTFILE
 
 ## Copy input files to the work directory:
 cp MyInputFile $SCRATCH

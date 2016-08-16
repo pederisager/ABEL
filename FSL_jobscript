@@ -1,0 +1,38 @@
+# Kopier filer inn i ABEL home folder for å bruke de i job scripts
+scp some/file pedermi@abel.uio.no:~/some/path
+
+## Kjør et job scripts
+
+#!/bin/bash
+
+# Job name:
+#SBATCH --job-name=feat_${TASK_ID}
+#
+# Project:
+#SBATCH --account=uio
+#
+# Wall clock limit:
+#SBATCH --time=24:00:00
+#
+# Max memory usage:
+#SBATCH --mem-per-cpu=5000M
+
+## Set up job environment:
+module purge   # clear any inherited modules
+set -o errexit # exit on errors
+
+module load fsl
+source $FSLDIR/etc/fslconf/fsl.csh
+
+
+YourCommands
+feat /correct/directory/feat_${TASK_ID}.fsf
+
+
+
+
+## Job script ferdig
+listthing=./subject/directries/* --- `ls ./subject/`
+
+#submit job script - rename participants for simplicity?
+arrayrun -r 501,502,504-513,515-536,601-632 jobscript.sh
