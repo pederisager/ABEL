@@ -20,5 +20,6 @@ OUTFILE=$TASK_ID.feat/ #This may not be the correct way to copy back a folder us
 cp $DATASET $SCRATCH
 cd $SCRATCH
 chkfile $OUTFILE
+mkdir $OUTFILE/$OUTFILE
 
 feat firstFEAT.fsf
