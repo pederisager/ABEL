@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# git commit script that will add all, commit, and push changes automatically
+#
+# run: gitacp <changes/files to add> "message for commit"  
+
+git add $1
+
+git commit -m "$2"
+
+git push -u origin master
