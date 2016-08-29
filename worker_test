@@ -4,8 +4,8 @@
 #	Remember to implement the lowpri queue in this script.
 
 #SBATCH --account=uio
-#SBATCH --time=2:0:0
-#SBATCH --mem-per-cpu=2G
+#SBATCH --time=0:10:0
+#SBATCH --mem-per-cpu=256M
 
 source /cluster/bin/jobsetup
 
@@ -15,12 +15,13 @@ set -o errexit	# exit on errors
 module load fsl	# Will load the default version of FSL in ABEL (check using module avail).
 
 DATASET="/usit/abel/u1/pedermi/Opioidfmri/standard_space/MNI152_T1_2mm_brain.nii.gz /usit/abel/u1/pedermi/Opioidfmri/checker/fMRI_raw/Session1/$TASK_ID/fmri.nii.gz /usit/abel/u1/pedermi/Opioidfmri/BET/$TASK_ID/3DRR_brain.nii.gz /usit/abel/u1/pedermi/Opioidfmri/checker/EVs/$TASK_ID/Session1/checker.txt"
-OUTFILE=$TASK_ID.feat/ #This may not be the correct way to copy back a folder using chkfile.
+OUTFILE=$TASK_ID.feat/
 
 cp $DATASET $SCRATCH
 cd $SCRATCH
 chkfile $OUTFILE
 mkdir $OUTFILE/$OUTFILE
 ls > $OUTFILE/$OUTFILE/data.txt
+echo "OUTFILE=$OUTFILE DATASET=$DATASET TASK_ID=$TASK_ID" > $OUTFILE/$OUTFILE/variables.txt
 
-feat firstFEAT.fsf
+#feat firstFEAT.fsf
