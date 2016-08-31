@@ -30,7 +30,7 @@ set fmri(featwatcher_yn) 1
 set fmri(sscleanup_yn) 0
 
 # Output directory
-set fmri(outputdir) "$SCRATCH/$TASK_ID.feat"
+set fmri(outputdir) "outputdir"
 
 # TR(s)
 set fmri(tr) 2.209000
@@ -239,7 +239,7 @@ set fmri(regstandard_yn) 1
 set fmri(alternateReference_yn) 0
 
 # Standard image
-set fmri(regstandard) "$SCRATCH/MNI152_T1_2mm_brain"
+set fmri(regstandard) "SCRATCH/MNI152_T1_2mm_brain"
 
 # Search space for registration to standard space
 # 0   : No search
@@ -267,13 +267,13 @@ set fmri(totalVoxels) 30912000
 set fmri(ncopeinputs) 0
 
 # 4D AVW data or FEAT directory (1)
-set feat_files(1) "$SCRATCH/fmri"
+set feat_files(1) "SCRATCH/fmri"
 
 # Add confound EVs text file
 set fmri(confoundevs) 0
 
 # Subject's structural image for analysis 1
-set highres_files(1) "$SCRATCH/3DRR_brain"
+set highres_files(1) "SCRATCH/3DRR_brain"
 
 # EV 1 title
 set fmri(evtitle1) "Checker"
@@ -307,7 +307,7 @@ set fmri(tempfilt_yn1) 1
 set fmri(deriv_yn1) 1
 
 # Custom EV file (EV 1)
-set fmri(custom1) "$SCRATCH/checker.txt"
+set fmri(custom1) "SCRATCH/checker.txt"
 
 # Gamma sigma (EV 1)
 set fmri(gammasigma1) 3

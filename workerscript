@@ -21,8 +21,12 @@ OUTFILE=$TASK_ID.feat
 
 cp $DATASET $SCRATCH
 cd $SCRATCH
-chkfile $OUTFILE/
-mkdir -p $OUTFILE/$OUTFILE/
-ls > $OUTFILE/$OUTFILE/data.txt
+chkfile ./$OUTFILE
+
+ls > ./$OUTFILE/data.txt
+echo "SCRATCH=$SCRATCH OUTFILE=$OUTFILE TASK_ID=$TASK_ID" > ./$OUTFILE/variables.txt
+
+sed -ie "s|outputdir|${OUTFILE}|g" firstFEAT.fsf
+sed -ie "s|SCRATCH|${SCRATCH}|g" firstFEAT.fsf
 
 feat firstFEAT.fsf
