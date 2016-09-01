@@ -1,0 +1,29 @@
+Starting job 15473599 ("15473593.622") on c16-9 at Wed Aug 31 16:39:10 CEST 2016
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat ${fsfroot}.fsf -D $FD -I $session -init" -b 10 -N feat0_init -l logs "
+    (procedure "fullFirstLevelAnalysis" line 146)
+    invoked from within
+"fullFirstLevelAnalysis $session"
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	  for { set session 1 } { $session <= $fmri(multiple..."
+    (file "/cluster/software/VERSIONS/fsl-5.0.8/bin/feat" line 388)
+
+Currently Loaded Modulefiles:
+  1) fsl/5.0.8
+
+Job script resource usage:
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+15473599.ba+    212688K      1796K 
+
+Job step resource usage:
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+15473599     15473593.+          1                         00:00:08      0:0 
+
+Job 15473599 ("15473593.622") completed on c16-9 at Wed Aug 31 16:39:13 CEST 2016

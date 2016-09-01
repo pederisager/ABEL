@@ -1,0 +1,43 @@
+Starting job 15481554 ("submitscript") on c16-36 at Thu Sep 1 10:09:47 CEST 2016
+TASK_IDs to submit: 509,622
+Command line: workerscript
+Main job id: 15481554
+Start time: 2016-09-01
+Thu Sep  1 10:09:47 2016: Submitting jobs...
+2 more job(s) to submit
+0 job(s) are running, and 0 are waiting
+Submitting 2 job(s):
+ TASK_ID 509:
+  Result from submit: Submitted batch job 15481555 => job ID 15481555
+ TASK_ID 622:
+  Result from submit: Submitted batch job 15481556 => job ID 15481556
+Sleeping...
+Thu Sep  1 10:11:48 2016: Checking queue...
+Number of jobs to check: 2
+ Job 15481555 has finished:
+       JobID               Start                 End  MaxVMSize     MaxRSS      State ExitCode 
+  ------------ ------------------- ------------------- ---------- ---------- ---------- -------- 
+  15481555     2016-09-01T10:10:33 2016-09-01T10:10:40                           FAILED      1:0 
+  15481555.ba+ 2016-09-01T10:10:33 2016-09-01T10:10:40    212688K      1336K     FAILED      1:0 
+ Job 15481556 has finished:
+       JobID               Start                 End  MaxVMSize     MaxRSS      State ExitCode 
+  ------------ ------------------- ------------------- ---------- ---------- ---------- -------- 
+  15481556     2016-09-01T10:10:33 2016-09-01T10:10:40                           FAILED      1:0 
+  15481556.ba+ 2016-09-01T10:10:33 2016-09-01T10:10:40    212688K      1340K     FAILED      1:0 
+All jobs have been submitted
+Done.
+
+No Modulefiles Currently Loaded.
+
+Job script resource usage:
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+15481554.ba+    361608K      3889K 
+
+Job step resource usage:
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+15481554     submitscr+          1                         00:02:12      0:0 
+15481554.0   arrayrun_+          1    273896K      1973K   00:02:11      0:0 
+
+Job 15481554 ("submitscript") completed on c16-36 at Thu Sep 1 10:11:58 CEST 2016

@@ -1,0 +1,43 @@
+Starting job 15473593 ("submitscript") on c16-36 at Wed Aug 31 16:38:16 CEST 2016
+TASK_IDs to submit: 509,622
+Command line: workerscript
+Main job id: 15473593
+Start time: 2016-08-31
+Wed Aug 31 16:38:18 2016: Submitting jobs...
+2 more job(s) to submit
+0 job(s) are running, and 0 are waiting
+Submitting 2 job(s):
+ TASK_ID 509:
+  Result from submit: Submitted batch job 15473598 => job ID 15473598
+ TASK_ID 622:
+  Result from submit: Submitted batch job 15473599 => job ID 15473599
+Sleeping...
+Wed Aug 31 16:40:18 2016: Checking queue...
+Number of jobs to check: 2
+ Job 15473598 has finished:
+       JobID               Start                 End  MaxVMSize     MaxRSS      State ExitCode 
+  ------------ ------------------- ------------------- ---------- ---------- ---------- -------- 
+  15473598     2016-08-31T16:39:05 2016-08-31T16:39:13                           FAILED      1:0 
+  15473598.ba+ 2016-08-31T16:39:05 2016-08-31T16:39:13    212688K      1788K     FAILED      1:0 
+ Job 15473599 has finished:
+       JobID               Start                 End  MaxVMSize     MaxRSS      State ExitCode 
+  ------------ ------------------- ------------------- ---------- ---------- ---------- -------- 
+  15473599     2016-08-31T16:39:05 2016-08-31T16:39:13                           FAILED      1:0 
+  15473599.ba+ 2016-08-31T16:39:05 2016-08-31T16:39:13    212688K      1796K     FAILED      1:0 
+All jobs have been submitted
+Done.
+
+No Modulefiles Currently Loaded.
+
+Job script resource usage:
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+15473593.ba+    361608K      3891K 
+
+Job step resource usage:
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+15473593     submitscr+          1                         00:02:15      0:0 
+15473593.0   arrayrun_+          1    273896K      1982K   00:02:10      0:0 
+
+Job 15473593 ("submitscript") completed on c16-36 at Wed Aug 31 16:40:29 CEST 2016

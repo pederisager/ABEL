@@ -17,16 +17,19 @@ module load fsl	# Will load the default version of FSL in ABEL (check using modu
 source $FSLDIR/etc/fslconf/fsl.sh
 
 DATASET="/usit/abel/u1/pedermi/Opioidfmri/standard_space/MNI152_T1_2mm_brain.nii.gz /usit/abel/u1/pedermi/Opioidfmri/checker/fMRI_raw/Session1/$TASK_ID/fmri.nii.gz /usit/abel/u1/pedermi/Opioidfmri/BET/$TASK_ID/3DRR_brain.nii.gz /usit/abel/u1/pedermi/Opioidfmri/checker/EVs/$TASK_ID/Session1/checker.txt /usit/abel/u1/pedermi/Opioidfmri/checker/scripts/firstFEAT.fsf"
-OUTFILE=$TASK_ID.feat
+OUTFILE=$SCRATCH/$TASK_ID.feat
 
 cp $DATASET $SCRATCH
 cd $SCRATCH
-chkfile ./$OUTFILE
+chkfile $OUTFILE
 
-ls > ./$OUTFILE/data.txt
-echo "SCRATCH=$SCRATCH OUTFILE=$OUTFILE TASK_ID=$TASK_ID" > ./$OUTFILE/variables.txt
+mkdir $OUTFILE
+ls > $OUTFILE/data.txt
+echo "SCRATCH=$SCRATCH OUTFILE=$OUTFILE TASK_ID=$TASK_ID" > $OUTFILE/variables.txt
 
-sed -ie "s|outputdir|${OUTFILE}|g" firstFEAT.fsf
+sed -ie "s|OUTFILE|${OUTFILE}|g" firstFEAT.fsf
 sed -ie "s|SCRATCH|${SCRATCH}|g" firstFEAT.fsf
+
+cp firstFEAT.fsf $OUTFILE
 
 feat firstFEAT.fsf

@@ -1,0 +1,43 @@
+Starting job 15474827 ("submitscript") on c16-36 at Wed Aug 31 19:30:24 CEST 2016
+TASK_IDs to submit: 509,622
+Command line: workerscript
+Main job id: 15474827
+Start time: 2016-08-31
+Wed Aug 31 19:30:26 2016: Submitting jobs...
+2 more job(s) to submit
+0 job(s) are running, and 0 are waiting
+Submitting 2 job(s):
+ TASK_ID 509:
+  Result from submit: Submitted batch job 15474832 => job ID 15474832
+ TASK_ID 622:
+  Result from submit: Submitted batch job 15474833 => job ID 15474833
+Sleeping...
+Wed Aug 31 19:32:27 2016: Checking queue...
+Number of jobs to check: 2
+ Job 15474832 is still waiting
+ Job 15474833 is still waiting
+All jobs have been submitted
+0 job(s) are still running, and 2 are waiting
+Sleeping...
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: *** STEP 15474827.0 ON c16-36 CANCELLED AT 2016-08-31T19:33:06 ***
+Caught signal.  Cleaning up...
+Cancelling  15474832 15474833 
+scancel 15474832 15474833
+slurmstepd: *** JOB 15474827 ON c16-36 CANCELLED AT 2016-08-31T19:33:06 ***
+
+No Modulefiles Currently Loaded.
+
+Job script resource usage:
+Cancelled  15474832 15474833 
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+15474827.ba+    467720K      5328K 
+
+Job step resource usage:
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+15474827     submitscr+          1                         00:02:45      0:0 
+15474827.0   arrayrun_+          1                         00:02:40      0:0 
+
+Job 15474827 ("submitscript") completed on c16-36 at Wed Aug 31 19:33:06 CEST 2016
