@@ -30,7 +30,7 @@ set fmri(featwatcher_yn) 1
 set fmri(sscleanup_yn) 0
 
 # Output directory
-set fmri(outputdir) "/work/jobs/15481792.d/509.feat"
+set fmri(outputdir) "/work/jobs/15531618.d/509.feat"
 
 # TR(s)
 set fmri(tr) 2.209000
@@ -239,7 +239,7 @@ set fmri(regstandard_yn) 1
 set fmri(alternateReference_yn) 0
 
 # Standard image
-set fmri(regstandard) "/work/jobs/15481792.d/MNI152_T1_2mm_brain"
+set fmri(regstandard) "/work/jobs/15531618.d/MNI152_T1_2mm_brain"
 
 # Search space for registration to standard space
 # 0   : No search
@@ -267,13 +267,13 @@ set fmri(totalVoxels) 30912000
 set fmri(ncopeinputs) 0
 
 # 4D AVW data or FEAT directory (1)
-set feat_files(1) "/work/jobs/15481792.d/fmri"
+set feat_files(1) "/work/jobs/15531618.d/fmri"
 
 # Add confound EVs text file
 set fmri(confoundevs) 0
 
 # Subject's structural image for analysis 1
-set highres_files(1) "/work/jobs/15481792.d/3DRR_brain"
+set highres_files(1) "/work/jobs/15531618.d/3DRR_brain"
 
 # EV 1 title
 set fmri(evtitle1) "Checker"
@@ -307,7 +307,7 @@ set fmri(tempfilt_yn1) 1
 set fmri(deriv_yn1) 1
 
 # Custom EV file (EV 1)
-set fmri(custom1) "/work/jobs/15481792.d/checker.txt"
+set fmri(custom1) "/work/jobs/15531618.d/checker.txt"
 
 # Gamma sigma (EV 1)
 set fmri(gammasigma1) 3

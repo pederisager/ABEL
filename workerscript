@@ -32,4 +32,6 @@ sed -ie "s|SCRATCH|${SCRATCH}|g" firstFEAT.fsf
 
 cp firstFEAT.fsf $OUTFILE
 
+unset FSLTCLSH
+
 feat firstFEAT.fsf

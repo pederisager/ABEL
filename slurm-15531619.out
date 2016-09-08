@@ -1,0 +1,17 @@
+Starting job 15531619 ("15531614.622") on c8-24 at Wed Sep 7 15:42:12 CEST 2016
+slurmstepd: *** JOB 15531619 ON c8-24 CANCELLED AT 2016-09-07T17:42:14 DUE TO TIME LIMIT ***
+
+Currently Loaded Modulefiles:
+  1) fsl/5.0.8
+
+Job script resource usage:
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+15531619.ba+    213824K      2182K 
+
+Job step resource usage:
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+15531619     15531614.+          1                         02:00:06      1:0 
+
+Job 15531619 ("15531614.622") completed on c8-24 at Wed Sep 7 17:42:14 CEST 2016
