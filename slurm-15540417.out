@@ -1,0 +1,26 @@
+Starting job 15540417 ("15540416.515") on c16-35 at Thu Sep 8 11:36:03 CEST 2016
+invalid command name "echo"
+    while executing
+"echo "script is reading firstFEAT" > /work/jobs/15540417.d/515.feat/fslread.txt"
+    (file "/work/jobs/15540417.d/firstFEAT.fsf" line 1)
+    invoked from within
+"source ${filename}"
+    (procedure "feat5:load" line 25)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/cluster/software/VERSIONS/fsl-5.0.6/bin/feat" line 116)
+
+Currently Loaded Modulefiles:
+  1) fsl/5.0.6
+
+Job script resource usage:
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+15540417.ba+    212688K      1370K 
+
+Job step resource usage:
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+15540417     15540416.+          1                         00:00:07      0:0 
+
+Job 15540417 ("15540416.515") completed on c16-35 at Thu Sep 8 11:36:06 CEST 2016

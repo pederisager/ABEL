@@ -1,0 +1,6 @@
+3DRR_brain.nii.gz
+512.feat
+checker.txt
+firstFEAT.fsf
+fmri.nii.gz
+MNI152_T1_2mm_brain.nii.gz

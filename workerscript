@@ -12,7 +12,7 @@ source /cluster/bin/jobsetup
 module purge	# clear any inherited modules
 set -o errexit	# exit on errors
 
-module load fsl	# Will load the default version of FSL in ABEL (check using module avail).
+module load fsl/5.0.6	# Will load FSL in ABEL (check using module avail).
 
 source $FSLDIR/etc/fslconf/fsl.sh
 
@@ -31,7 +31,5 @@ sed -ie "s|OUTFILE|${OUTFILE}|g" firstFEAT.fsf
 sed -ie "s|SCRATCH|${SCRATCH}|g" firstFEAT.fsf
 
 cp firstFEAT.fsf $OUTFILE
-
-unset FSLTCLSH
 
 feat firstFEAT.fsf
