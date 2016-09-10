@@ -12,7 +12,7 @@ source /cluster/bin/jobsetup
 module purge	# clear any inherited modules
 set -o errexit	# exit on errors
 
-module load fsl/5.0.6	# Will load FSL in ABEL (check using module avail).
+module load fsl/5.0.9	# Will load FSL in ABEL (check using module avail).
 
 source $FSLDIR/etc/fslconf/fsl.sh
 
@@ -23,13 +23,13 @@ cp $DATASET $SCRATCH
 cd $SCRATCH
 chkfile $OUTFILE
 
-mkdir $OUTFILE
-ls > $OUTFILE/data.txt
-echo "SCRATCH=$SCRATCH OUTFILE=$OUTFILE TASK_ID=$TASK_ID" > $OUTFILE/variables.txt
+#mkdir $OUTFILE
+#ls > $OUTFILE/data.txt
+#echo "SCRATCH=$SCRATCH OUTFILE=$OUTFILE TASK_ID=$TASK_ID" > $OUTFILE/variables.txt
 
 sed -ie "s|OUTFILE|${OUTFILE}|g" firstFEAT.fsf
 sed -ie "s|SCRATCH|${SCRATCH}|g" firstFEAT.fsf
 
-cp firstFEAT.fsf $OUTFILE
+#cp firstFEAT.fsf $OUTFILE
 
 feat firstFEAT.fsf

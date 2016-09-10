@@ -1,0 +1,21 @@
+
+/bin/cp /work/jobs/15558311.d/firstFEAT.fsf design.fsf
+
+/cluster/software/VERSIONS/fsl-5.0.9/bin/feat_model design
+
+mkdir .files;cp /cluster/software/VERSIONS/fsl-5.0.9/doc/fsl.css .files;cp -r /cluster/software/VERSIONS/fsl-5.0.9/doc/images .files/images
+
+/cluster/software/VERSIONS/fsl-5.0.9/bin/fsl_sub -T 10 -l logs -N feat0_init   /cluster/software/VERSIONS/fsl-5.0.9/bin/feat /work/jobs/15558311.d/515.feat/design.fsf -D /work/jobs/15558311.d/515.feat -I 1 -init
+24501
+
+/cluster/software/VERSIONS/fsl-5.0.9/bin/fsl_sub -T 41 -l logs -N feat2_pre -j 24501  /cluster/software/VERSIONS/fsl-5.0.9/bin/feat /work/jobs/15558311.d/515.feat/design.fsf -D /work/jobs/15558311.d/515.feat -I 1 -prestats
+24705
+
+/cluster/software/VERSIONS/fsl-5.0.9/bin/fsl_sub -T 1 -l logs -N feat3_film -j 24705  /cluster/software/VERSIONS/fsl-5.0.9/bin/feat /work/jobs/15558311.d/515.feat/design.fsf -D /work/jobs/15558311.d/515.feat -I 1 -stats
+29452
+
+/cluster/software/VERSIONS/fsl-5.0.9/bin/fsl_sub -T 119 -l logs -N feat4_post -j 29452  /cluster/software/VERSIONS/fsl-5.0.9/bin/feat /work/jobs/15558311.d/515.feat/design.fsf -D /work/jobs/15558311.d/515.feat -poststats 0 
+29642
+
+/cluster/software/VERSIONS/fsl-5.0.9/bin/fsl_sub -T 1 -l logs -N feat5_stop -j 24705,29452,29642  /cluster/software/VERSIONS/fsl-5.0.9/bin/feat /work/jobs/15558311.d/515.feat/design.fsf -D /work/jobs/15558311.d/515.feat -stop
+30323

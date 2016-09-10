@@ -1,0 +1,84 @@
+Starting job 15558308 ("submitscript") on c16-35 at Sat Sep 10 15:42:12 CEST 2016
+TASK_IDs to submit: 515,632
+Command line: workerscript
+Main job id: 15558308
+Start time: 2016-09-10
+Sat Sep 10 15:42:14 2016: Submitting jobs...
+2 more job(s) to submit
+0 job(s) are running, and 0 are waiting
+Submitting 2 job(s):
+ TASK_ID 515:
+  Result from submit: Submitted batch job 15558311 => job ID 15558311
+ TASK_ID 632:
+  Result from submit: Submitted batch job 15558312 => job ID 15558312
+Sleeping...
+Sat Sep 10 15:44:19 2016: Checking queue...
+Number of jobs to check: 2
+ Job 15558311 is still running
+ Job 15558312 is still running
+All jobs have been submitted
+2 job(s) are still running, and 0 are waiting
+Sleeping...
+Sat Sep 10 15:46:24 2016: Checking queue...
+Number of jobs to check: 2
+ Job 15558311 is still running
+ Job 15558312 is still running
+2 job(s) are still running, and 0 are waiting
+Sleeping...
+Sat Sep 10 15:48:29 2016: Checking queue...
+Number of jobs to check: 2
+ Job 15558311 is still running
+ Job 15558312 is still running
+2 job(s) are still running, and 0 are waiting
+Sleeping...
+Sat Sep 10 15:50:39 2016: Checking queue...
+Number of jobs to check: 2
+ Job 15558311 is still running
+ Job 15558312 is still running
+2 job(s) are still running, and 0 are waiting
+Sleeping...
+Sat Sep 10 15:52:54 2016: Checking queue...
+Number of jobs to check: 2
+ Job 15558311 is still running
+ Job 15558312 is still running
+2 job(s) are still running, and 0 are waiting
+Sleeping...
+Sat Sep 10 15:55:03 2016: Checking queue...
+Number of jobs to check: 2
+ Job 15558311 is still running
+ Job 15558312 is still running
+2 job(s) are still running, and 0 are waiting
+Sleeping...
+Sat Sep 10 15:57:12 2016: Checking queue...
+Number of jobs to check: 2
+ Job 15558311 is still running
+ Job 15558312 has finished:
+       JobID               Start                 End  MaxVMSize     MaxRSS      State ExitCode 
+  ------------ ------------------- ------------------- ---------- ---------- ---------- -------- 
+  15558312     2016-09-10T15:43:03 2016-09-10T15:55:45                        COMPLETED      0:0 
+  15558312.ba+ 2016-09-10T15:43:03 2016-09-10T15:55:45   1511700K   1135138K  COMPLETED      0:0 
+1 job(s) are still running, and 0 are waiting
+Sleeping...
+Sat Sep 10 15:59:24 2016: Checking queue...
+Number of jobs to check: 1
+ Job 15558311 has finished:
+       JobID               Start                 End  MaxVMSize     MaxRSS      State ExitCode 
+  ------------ ------------------- ------------------- ---------- ---------- ---------- -------- 
+  15558311     2016-09-10T15:43:03 2016-09-10T15:57:46                        COMPLETED      0:0 
+  15558311.ba+ 2016-09-10T15:43:03 2016-09-10T15:57:46   1558808K   1182539K  COMPLETED      0:0 
+Done.
+
+No Modulefiles Currently Loaded.
+
+Job script resource usage:
+       JobID  MaxVMSize     MaxRSS 
+------------ ---------- ---------- 
+15558308.ba+    361604K      4468K 
+
+Job step resource usage:
+       JobID    JobName  AllocCPUS  MaxVMSize     MaxRSS    Elapsed ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+15558308     submitscr+          1                         00:17:28      0:0 
+15558308.0   arrayrun_+          1    273896K      3859K   00:17:21      0:0 
+
+Job 15558308 ("submitscript") completed on c16-35 at Sat Sep 10 15:59:34 CEST 2016

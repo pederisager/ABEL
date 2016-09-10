@@ -1,5 +1,3 @@
-echo "script is reading firstFEAT" > OUTFILE/fslread.txt
-
 # FEAT version number
 set fmri(version) 6.00
 
