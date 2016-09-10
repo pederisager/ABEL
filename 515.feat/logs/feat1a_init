@@ -1,6 +1,0 @@
-</pre><hr>Initialisation<br><pre>
-
-/cluster/software/VERSIONS/fsl-5.0.9/bin/fslmaths /work/jobs/15558311.d/fmri prefiltered_func_data -odt float
-Total original volumes = 115
-
-/cluster/software/VERSIONS/fsl-5.0.9/bin/fslroi prefiltered_func_data example_func 57 1
