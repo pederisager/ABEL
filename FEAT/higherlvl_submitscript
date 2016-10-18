@@ -1,0 +1,64 @@
+#!/bin/bash
+
+### Notes:
+#
+#This is a job script for Abel. Hashtagged lines starting with SBATCH are not commented out - they are instructions to the computer cluster. 
+# 
+#This is a general script recipe. To run for your desired data, edit every section enclosed in <>
+#
+#Remember to run the script from where you would like the feat output directory to be. 
+
+######################################################
+
+#This section contains settings for the Abel cluster. You can check their functions by searching in the Abel userguide, or by going to the Abel homepage on UiO's webpages. 
+#You should especially consider whether the qos=lowpri is appropriate for your analysis. Considering the values in the --mem-per-cpu and --time options may also be wise.
+# These setting-commands will only run if they are executed in the very beginning of the script.
+
+#SBATCH --job-name=<your preffered job name>
+#SBATCH --account=uio
+#SBATCH --time=24:0:0
+#SBATCH --mem-per-cpu=4G
+#SBATCH --qos=lowpri
+#SBATCH --output=<name_of_your_analysis>%j
+#SBATCH --error=<name_of_your_analysis>_error%j
+
+
+######################################################
+
+#This section sets up the Abel environment so that your job can run.
+
+source /cluster/bin/jobsetup	#Sets up the variables that Abel needs to function. 
+
+module purge	# clear any inherited modules
+set -o errexit	# exit on errors
+
+module load fsl/5.0.9	#Will load FSL version 5.0.9 in ABEL. You can change version by editing /5.0.9 (check available modules by typing module avail in a terminal connected to Abel).
+
+source $FSLDIR/etc/fslconf/fsl.sh	#Sets up the variables that FSL needs to function. 
+
+
+######################################################
+
+#This section sets your data up for analysis in the Abel SCRATCH directory. 
+
+#WARNING: 
+#In order for this code to run, you must change the paths to data in your design.fsf file to SCRATCH/<your_data_file_name>, and change the desired output path to OUTFILE. The reason for this is that your design.fsf is run in the SCRATCH directory, and you need to accomodate for this in your script. Ctrl+H (find and replace) is a nice way to do this. 
+
+
+DATASET="</absoulute/path/to/data1.file /absoulute/path/to/data2.file /absolute/path/to/design.fsf>"	#Substitute example lines for the path(s) to your data, and to the design.fsf you would like to run. All the file paths in $DATASET will be copied to SCRATCH.
+
+OUTFILE=$SCRATCH/<name_of_your_analysis>.gfeat	#Denotes what will be copied back from SCRATCH once the analysis is done, or an error occurs.  
+
+cp -r $DATASET $SCRATCH	#Copies data to SCRATCH
+cd $SCRATCH		#Changes working directory to SCRATCH
+chkfile $OUTFILE	#Decides what will be copied back once job is completed
+
+
+sed -ie "s|OUTFILE|${OUTFILE}|g" <your_design>.fsf #Replaces "OUTFILE" with the path of the actual OUTFILE directory inside your design.fsf.
+sed -ie "s|SCRATCH|${SCRATCH}|g" <your_design>.fsf #Replaces "SCRATCH" with the path of the actual SCRATCH directory inside your design.fsf. 
+
+######################################################
+
+#Finally, you can run your desired design script:
+
+feat <your_design>.fsf

@@ -1,0 +1,35 @@
+#!/bin/sh
+
+### Notes:
+#
+#This is a job script for Abel. Hashtagged lines starting with SBATCH are not commented out - they are instructions to the computer cluster. 
+# 
+#This is a general script recipe. To run for your desired data, edit every section enclosed in <>
+#
+#This script submits workerscript (an FSL-jobscript for ABEL) to the cluster. 
+#
+#Remember to run the script from where you would like the feat output directory to be. 
+
+
+######################################################
+
+#This section contains settings for the Abel cluster. You can check their functions by searching in the Abel userguide, or by going to the Abel homepage on UiO's webpages.
+#All this script does is execute the arrayrun command. It does not need to call fsl, nor does it need any processing power beyond 200M (the minimum). Those things are sorted in the workerscript.
+
+#SBATCH --account=uio
+#SBATCH --time=50:0:0
+#SBATCH --mem-per-cpu=200M
+
+
+######################################################
+
+#This section sets up the Abel environment, and executes a specified number of arrayruns (one for each first-level feat you wish to run).
+#The arrayrun command functions somewhat like a for-loop. It creates a vector of numbers and executes workerscript for all the numbers in the vector. Each workerscript can call it's assigned number using the variable $TASK_ID inside the workerscript, and this is how you differentiate the participants to be analyzed. 
+
+source /cluster/bin/jobsetup	#Sets up the variables that Abel needs to function. 
+
+module purge   # clear any inherited modules
+set -o errexit # exit on errors
+
+
+arrayrun <list of numbers> workerscript 
